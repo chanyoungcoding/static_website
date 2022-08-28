@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    animation: sun linear 20s infinite;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #b1e1e2;
+    animation: sky linear 20s infinite;
+}
+
+section {
+    width: 80%;
+    height: 100vh;
+    margin: 0px auto;
+}
+
+/* 하늘 */
+section .sky {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+.sky img {
+    position: absolute;
+}
+
+.sun {
+    animation: sun linear 20s infinite;
+}
+
+.cloud1 {
+    left: 15%;
+    top: 30%;
+    animation: flow linear 10s infinite;
+}
+
+.cloud2 {
+    left: 5%;
+    top: 50%;
+    animation: flow linear 20s infinite;
+}
+
+/* 마을 */
+.town {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+}
+
+.circle,
+.night,
+.day {
+    position: absolute;
+}
+
+.circle {
+    animation: rotation linear 20s infinite;
+}
+
+.day {
+    animation: day linear 20s infinite;
+}
+
+.man {
+    position: absolute;
+    padding-top: 200px;
+    padding-right: 500px;
+    animation: flow linear 7s infinite;
+}
+
+.family {
+    position: absolute;
+    padding-top: 175px;
+    padding-right: 800px;
+    animation: flow linear 20s infinite;
+}
+
+/* animation */
+@keyframes rotation {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes sky {
+    0% {background-color: #b08fcc;}
+    25% {background-color: #b1e1e2;}
+    50% {background-color: #fcd2e2;}
+    75% {background-color: #636888;}
+    100% {background-color: #b08fcc;}
+}
+
+@keyframes sun {
+    0% {opacity: 0; transform: rotate(-90deg);}
+    25% {opacity: 1; transform: rotate(-30deg);}
+    50% {opacity: 1; transform: rotate(30deg);}
+    75% {opacity: 0; transform: rotate(90deg);}
+    100% {opacity: 0; transform: rotate(-90deg);}
+}
+
+@keyframes day {
+    0% {opacity: 0;}
+    25% {opacity: 1;}
+    50% {opacity: 1;}
+    75% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+@keyframes flow {
+    0% {left:30%; opacity: 0;}
+    10% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {left:80%; opacity: 0;}
+}
